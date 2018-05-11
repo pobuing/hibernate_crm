@@ -36,7 +36,6 @@ public class HibernateUtil {
 			sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 		} catch (HibernateException e) {
 			e.printStackTrace();
-			throw new HibernateException("初始化会话工厂失败！");
 		}
 
 	}

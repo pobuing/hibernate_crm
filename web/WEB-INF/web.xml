@@ -5,10 +5,18 @@
          version="4.0">
     <servlet>
         <servlet-name>AddCustomerServlet</servlet-name>
-        <servlet-class>cn.probuing.web.servlet.AddCustomerServlet</servlet-class>
+        <servlet-class>cn.probuing.crm.web.servlet.AddCustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddCustomerServlet</servlet-name>
         <url-pattern>/AddCustomerServlet</url-pattern>
     </servlet-mapping>
+    <filter>
+        <filter-name>encodeFileter</filter-name>
+        <filter-class>cn.probuing.crm.web.filter.GenericEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodeFileter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

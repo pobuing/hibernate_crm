@@ -2,6 +2,7 @@ package cn.probuing.crm.web.servlet;
 
 import cn.probuing.crm.domain.Customer;
 import cn.probuing.crm.service.CustomerService;
+import cn.probuing.crm.service.impl.CustomerServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ public class AddCustomerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            request.setCharacterEncoding("utf-8");
             //1.获得参数并封装到customer对象
             Customer customer = new Customer();
             //2.调用service保存客户

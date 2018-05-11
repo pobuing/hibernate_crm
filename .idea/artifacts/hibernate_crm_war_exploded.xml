@@ -7,10 +7,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="hibernate_crm" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="antlr-2.7.7" />
-          <element id="library" level="project" name="jstl-1.2" />
-        </element>
+        <element id="directory" name="lib" />
       </element>
     </root>
   </artifact>

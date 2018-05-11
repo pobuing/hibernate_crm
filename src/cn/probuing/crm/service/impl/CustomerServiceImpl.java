@@ -12,8 +12,9 @@ import cn.probuing.crm.service.CustomerService;
  */
 public class CustomerServiceImpl implements CustomerService {
     private CustomerDao customerDao = new CustomerDaoImpl();
+
     @Override
     public void save(Customer customer) {
-
+        customerDao.save(customer);
     }
 }
