@@ -7,6 +7,14 @@
         <servlet-name>AddCustomerServlet</servlet-name>
         <servlet-class>cn.probuing.crm.web.servlet.AddCustomerServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListCustomerServlet</servlet-name>
+        <servlet-class>cn.probuing.crm.web.servlet.ListCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListCustomerServlet</servlet-name>
+        <url-pattern>/ListCustomerServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddCustomerServlet</servlet-name>
         <url-pattern>/AddCustomerServlet</url-pattern>

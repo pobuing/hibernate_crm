@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.probuing.crm.domain">
+    <class name="User" table="sys_user">
+        <id name="user_id">
+            <!--主键生成策略-->
+            <generator class="native"/>
+        </id>
+        <property name="user_code" column="user_code"></property>
+        <property name="user_name" column="user_name"></property>
+        <property name="user_password" column="user_password"></property>
+        <property name="user_state" column="user_state"></property>
+
+        <!--配置多对多关系
+            name:set集合的属性名
+            table:中间表表名
+
+        -->
+        <set name="roles" table="sys_user_role">
+            <!--
+                key标签
+                    column:当前对象在中间表中的外键名称
+            -->
+            <key column="user_id"></key>
+            <!--
+                many-to-many标签：
+                class：关联另一方的类的全类名
+                column 关联的另一方在中间表的外键名称
+            -->
+            <many-to-many class="Role" column="role_id"></many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>
