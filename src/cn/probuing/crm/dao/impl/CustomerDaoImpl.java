@@ -34,4 +34,16 @@ public class CustomerDaoImpl implements CustomerDao {
         Criteria criteria = session.createCriteria(Customer.class);
         return criteria.list();
     }
+
+    /**
+     * 根据id获得customer对象
+     *
+     * @param customer_id
+     * @return
+     */
+    @Override
+    public Customer getByCustomerId(Long customer_id) {
+        Session session = HibernateUtil.getCurrentSession();
+        return session.get(Customer.class, customer_id);
+    }
 }

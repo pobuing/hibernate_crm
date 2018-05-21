@@ -13,4 +13,6 @@ public interface CustomerDao {
     void save(Customer customer);
 
     List<Customer> getAllCustomer();
+
+    Customer getByCustomerId(Long customer_id);
 }

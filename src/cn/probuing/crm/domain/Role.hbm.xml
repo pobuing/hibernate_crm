@@ -13,7 +13,8 @@
         <property name="role_memo" column="role_memo"/>
 
         <!--Role多对多配置-->
-        <set name="users" table="sys_user_role">
+        <!-- inverse 属性 使得一方放弃维护外键关系-->
+        <set name="users" table="sys_user_role" inverse="true">
             <key column="role_id"/>
             <many-to-many class="User"
                           column="user_id"/>

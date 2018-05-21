@@ -19,7 +19,7 @@
             table:中间表表名
 
         -->
-        <set name="roles" table="sys_user_role">
+        <set name="roles" table="sys_user_role" cascade="save-update">
             <!--
                 key标签
                     column:当前对象在中间表中的外键名称

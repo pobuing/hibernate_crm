@@ -34,6 +34,15 @@ public class LinkMan {
     private String lkm_position;
     private String lkm_memo;
     private Customer customer;
+    private Long cust_id;
+
+    public Long getCust_id() {
+        return cust_id;
+    }
+
+    public void setCust_id(Long cust_id) {
+        this.cust_id = cust_id;
+    }
 
     public Customer getCustomer() {
         return customer;
