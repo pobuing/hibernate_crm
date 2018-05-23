@@ -5,8 +5,10 @@ import cn.probuing.crm.dao.impl.CustomerDaoImpl;
 import cn.probuing.crm.domain.Customer;
 import cn.probuing.crm.service.CustomerService;
 import cn.probuing.crm.utils.HibernateUtil;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.DetachedCriteria;
 
 import java.util.List;
 
@@ -45,6 +47,18 @@ public class CustomerServiceImpl implements CustomerService {
         List<Customer> list = customerDao.getAllCustomer();
         //数据提交
         tx.commit();
+        return list;
+    }
+
+    @Override
+    public List<Customer> getAllCustomer(DetachedCriteria detachedCriteria) {
+        Session session = HibernateUtil.getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        //离线对象关联到session
+        Criteria criteria = detachedCriteria.getExecutableCriteria(session);
+        List list = criteria.list();
+        tx.commit();
+        //执行查询并返回
         return list;
     }
 }

@@ -17,11 +17,11 @@
         <!--数据库驱动-->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <!--数据库url-->
-        <property name="hibernate.connection.url">jdbc:mysql://103.249.130.171:3306/hibernate_crm?useUnicode=true&amp;characterEncoding=UTF8</property>
+        <property name="hibernate.connection.url"></property>
         <!--数据库连接用户名-->
-        <property name="hibernate.connection.username">appUser</property>
+        <property name="hibernate.connection.username"></property>
         <!--数据库连接密码-->
-        <property name="hibernate.connection.password">AA1122BB</property>
+        <property name="hibernate.connection.password"></property>
         <!--数据库方言-->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 

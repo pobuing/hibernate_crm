@@ -1,6 +1,7 @@
 package cn.probuing.crm.service;
 
 import cn.probuing.crm.domain.Customer;
+import org.hibernate.criterion.DetachedCriteria;
 
 import java.util.List;
 
@@ -24,4 +25,13 @@ public interface CustomerService {
      * @return
      */
     List<Customer> getAllCustomer();
+
+    /**
+     * 根据条件查询所有
+     *
+     * @param detachedCriteria
+     * @return
+     */
+    List<Customer> getAllCustomer(DetachedCriteria detachedCriteria);
+
 }
