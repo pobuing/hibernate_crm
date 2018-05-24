@@ -143,7 +143,7 @@
                                 </TR>
                                 <TR>
                                     <TD class=menuSmall><A class=style2
-                                                           href="${pageContext.request.contextPath}/ListCustomerServlet"
+                                                           href="${pageContext.request.contextPath}/CustomerAction_list"
                                                            target=main>－ 客户列表</A></TD>
                                 </TR>
 
