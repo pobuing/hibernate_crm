@@ -6,8 +6,36 @@
 <struts>
     <constant name="struts.action.extension" value=",,"/>
     <package name="crm" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="LoginInterceptor" class="cn.probuing.crm.interceptor.LoginInterceptor"></interceptor>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="LoginInterceptor">
+                    <!--不拦截login方法-->
+                    <param name="excludeMethods">login</param>
+                </interceptor-ref>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="myStack"/>
+        <!--定义全局结果集-->
+        <global-results>
+            <result name="toLogin">/login.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <!--如果出现runtimeException就将跳转到error的结果映射中-->
+            <exception-mapping exception="java.lang.RuntimeException" result="error">
+            </exception-mapping>
+        </global-exception-mappings>
         <action name="CustomerAction_*" class="cn.probuing.crm.web.action.CustomerAction" method="{1}">
             <result name="list">/jsp/customer/list.jsp</result>
+            <result name="toList" type="redirectAction">
+                <param name="actionName">CustomerAction_list</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="UserAction_*" class="cn.probuing.crm.web.action.UserAction" method="{1}">
+            <result name="toHome" type="redirect">/index.htm</result>
+            <result name="error" type="dispatcher">/login.jsp</result>
         </action>
     </package>
 </struts>
