@@ -1,7 +1,6 @@
 package cn.probuing.crm.service.impl;
 
 import cn.probuing.crm.dao.UserDao;
-import cn.probuing.crm.dao.impl.UserDaoImpl;
 import cn.probuing.crm.domain.User;
 import cn.probuing.crm.service.UserService;
 import cn.probuing.crm.utils.HibernateUtil;
@@ -13,7 +12,15 @@ import org.hibernate.Transaction;
  * @Description:
  */
 public class UserServiceImpl implements UserService {
-    private UserDao ud = new UserDaoImpl();
+    private UserDao ud;
+
+    public UserDao getUd() {
+        return ud;
+    }
+
+    public void setUd(UserDao ud) {
+        this.ud = ud;
+    }
 
     @Override
     public User login(User user) {

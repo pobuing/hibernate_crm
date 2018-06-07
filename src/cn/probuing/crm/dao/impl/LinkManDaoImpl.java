@@ -1,5 +1,6 @@
-package cn.probuing.crm.service.impl;
+package cn.probuing.crm.dao.impl;
 
+import cn.probuing.crm.dao.LinkManDao;
 import cn.probuing.crm.domain.LinkMan;
 import cn.probuing.crm.utils.HibernateUtil;
 import org.hibernate.Session;

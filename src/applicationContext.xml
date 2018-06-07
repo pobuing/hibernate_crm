@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置dao-->
+    <bean name="customerDao" class="cn.probuing.crm.dao.impl.CustomerDaoImpl"></bean>
+    <bean name="linkManDao" class="cn.probuing.crm.dao.impl.LinkManDaoImpl"></bean>
+    <bean name="userDao" class="cn.probuing.crm.dao.impl.UserDaoImpl"></bean>
+    <!--配置service-->
+    <bean name="customerService" class="cn.probuing.crm.service.impl.CustomerServiceImpl">
+        <!--注入依赖-->
+        <property name="customerDao" ref="customerDao"/>
+    </bean>
+    <bean name="linkManService" class="cn.probuing.crm.service.impl.LinkManServiceImp">
+        <property name="lmd" ref="linkManDao"/>
+        <property name="cd" ref="customerDao"/>
+    </bean>
+    <bean class="cn.probuing.crm.service.impl.UserServiceImpl" name="userService">
+        <property name="ud" ref="userDao"/>
+    </bean>
+</beans>

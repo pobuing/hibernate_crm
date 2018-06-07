@@ -1,4 +1,4 @@
-package cn.probuing.crm.service.impl;
+package cn.probuing.crm.dao;
 
 import cn.probuing.crm.domain.LinkMan;
 

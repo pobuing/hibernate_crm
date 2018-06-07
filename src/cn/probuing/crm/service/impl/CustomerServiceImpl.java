@@ -1,7 +1,6 @@
 package cn.probuing.crm.service.impl;
 
 import cn.probuing.crm.dao.CustomerDao;
-import cn.probuing.crm.dao.impl.CustomerDaoImpl;
 import cn.probuing.crm.domain.Customer;
 import cn.probuing.crm.service.CustomerService;
 import cn.probuing.crm.utils.HibernateUtil;
@@ -18,7 +17,15 @@ import java.util.List;
  * @Description:
  */
 public class CustomerServiceImpl implements CustomerService {
-    private CustomerDao customerDao = new CustomerDaoImpl();
+    private CustomerDao customerDao;
+
+    public CustomerDao getCustomerDao() {
+        return customerDao;
+    }
+
+    public void setCustomerDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     @Override
     public void save(Customer customer) {

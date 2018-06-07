@@ -1,7 +1,7 @@
 package cn.probuing.crm.service.impl;
 
 import cn.probuing.crm.dao.CustomerDao;
-import cn.probuing.crm.dao.impl.CustomerDaoImpl;
+import cn.probuing.crm.dao.LinkManDao;
 import cn.probuing.crm.domain.Customer;
 import cn.probuing.crm.domain.LinkMan;
 import cn.probuing.crm.service.LinkManService;
@@ -14,8 +14,24 @@ import cn.probuing.crm.utils.HibernateUtil;
  */
 public class LinkManServiceImp implements LinkManService {
 
-    private CustomerDao cd = new CustomerDaoImpl();
-    private LinkManDao lmd = new LinkManDaoImpl();
+    private CustomerDao cd;
+    private LinkManDao lmd;
+
+    public CustomerDao getCd() {
+        return cd;
+    }
+
+    public void setCd(CustomerDao cd) {
+        this.cd = cd;
+    }
+
+    public LinkManDao getLmd() {
+        return lmd;
+    }
+
+    public void setLmd(LinkManDao lmd) {
+        this.lmd = lmd;
+    }
 
     @Override
     public void save(LinkMan lm) {
